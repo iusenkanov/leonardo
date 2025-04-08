@@ -1,4 +1,4 @@
 apiVersion: v2
-name: my-python-app
+name: leonardo
 version: 0.1.0
 appVersion: "1.0"
