@@ -1,4 +1,10 @@
+replicaCount: 1
+
 image:
   repository: leonardo
   tag: latest
   pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 80
