@@ -1,5 +1,9 @@
 replicaCount: 1
 
+env:
+  - name: SENTRY_DSN
+    value: "https://2449b08ab0a8e4151685b0933b22f828@o4508681726918656.ingest.us.sentry.io/4508694441689088"
+
 image:
   repository: leonardo
   tag: latest
