@@ -2,7 +2,7 @@ replicaCount: 1
 
 env:
   - name: SENTRY_DSN
-    value: "https://2449b08ab0a8e4151685b0933b22f828@o4508681726918656.ingest.us.sentry.io/4508694441689088"
+    value: "https://501a7f30735cc02fcefd7878630bf1f6@o4509091708928000.ingest.us.sentry.io/4509116861972480"
 
 image:
   repository: leonardo
