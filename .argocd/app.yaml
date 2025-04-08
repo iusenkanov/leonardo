@@ -6,11 +6,14 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: 'https://github.com/iusenkanov/leonardo.git'
+    repoURL: https://github.com/iusenkanov/leonardo.git
     targetRevision: HEAD
     path: charts
+    helm:
+      valueFiles:
+        - values.yaml
   destination:
-    server: 'https://kubernetes.default.svc'
+    server: https://kubernetes.default.svc
     namespace: default
   syncPolicy:
     automated:
