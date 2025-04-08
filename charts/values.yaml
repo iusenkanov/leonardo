@@ -1,0 +1,9 @@
+replicaCount: 1
+image:
+  repository: <your-dockerhub-username>/my-python-app
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: LoadBalancer
+  port: 80
