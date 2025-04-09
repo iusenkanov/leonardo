@@ -8,6 +8,7 @@ image:
   repository: ghcr.io/iusenkanov/leonardo
   tag: latest
   pullPolicy: Always
+  revision: "unset"
 
 service:
   type: NodePort
