@@ -6,7 +6,12 @@ image:
   repository: ghcr.io/iusenkanov/leonardo
   tag: latest
   pullPolicy: Always
+<<<<<<< HEAD
   revision: "unset"
+=======
+  revision: "test-1234"
+
+>>>>>>> 6e09c2c (sentry release)
 service:
   type: NodePort
   port: 80
