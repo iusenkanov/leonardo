@@ -16,8 +16,8 @@ spec:
     path: charts
     helm:
       parameters:
-        - name: revision
-          value: $ARGOCD_APP_REVISION
+         - name: revision
+           value: '{{ .AppRevision }}'
       valueFiles:
         - values.yaml
   destination:
