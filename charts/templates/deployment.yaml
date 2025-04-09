@@ -26,4 +26,6 @@ spec:
               value: {{ .value | quote }}
             {{- end }}
             {{- end }}
+            - name: ARGOCD_APP_REVISION
+              value: {{ .Values.revision }}
       
