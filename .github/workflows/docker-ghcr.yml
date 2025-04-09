@@ -23,9 +23,14 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Set IMAGE_TAG
+        run: echo "IMAGE_TAG=${GITHUB_SHA}" >> $GITHUB_ENV
+        
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/leonardo:latest
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/leonardo:${{ env.IMAGE_TAG }}
+            ghcr.io/${{ github.repository_owner }}/leonardo:latest
