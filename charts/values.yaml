@@ -6,7 +6,6 @@ env:
 
 image:
   repository: ghcr.io/iusenkanov/leonardo
-  tag: {{ .Values.image.tag | default "latest" }}
   pullPolicy: Always
 
 service:

@@ -15,8 +15,8 @@ spec:
     spec:
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          image: "{{ .Values.image.repository }}:{{ .Values.revision | default "latest" }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy | default "IfNotPresent" }}
           ports:
             - containerPort: 80
           env:
@@ -27,5 +27,6 @@ spec:
             {{- end }}
             {{- end }}
             - name: SENTRY_RELEASE
-              value: "leonardo@{{ .Values.revision }}"
+              value: "leonardo@{{ .Values.revision | default \"latest\" }}"
+
       
