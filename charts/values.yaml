@@ -1,18 +1,13 @@
 replicaCount: 1
+
 env:
   - name: SENTRY_DSN
     value: "https://501a7f30735cc02fcefd7878630bf1f6@o4509091708928000.ingest.us.sentry.io/4509116861972480"
+
 image:
   repository: ghcr.io/iusenkanov/leonardo
   tag: latest
   pullPolicy: Always
-<<<<<<< HEAD
-  revision: "unset"
-=======
-  revision: "test-1234"
-
->>>>>>> 6e09c2c (sentry release)
 service:
   type: NodePort
   port: 80
-revision: 5660b0c3f1df1d0178a525906b928351e325a879
