@@ -4,9 +4,6 @@ metadata:
   name: leonardo
   namespace: argocd
   annotations:
-    argocd.argoproj.io/parameters: |
-      - name: revision
-        value: "{{ .Revision }}"
     argocd-image-updater.argoproj.io/image-list: ghcr.io/iusenkanov/leonardo
     argocd-image-updater.argoproj.io/leonardo.update-strategy: latest
     argocd-image-updater.argoproj.io/leonardo.helm-image-name: image
