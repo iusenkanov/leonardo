@@ -16,10 +16,10 @@ spec:
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          imagePullPolicy: itachi
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 80
           env:
             - name: ARGOCD_APP_REVISION
-              value: "{{ .Values.ARGOCD_APP_REVISION }}"
+              value: itachi
       
