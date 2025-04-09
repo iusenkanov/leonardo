@@ -26,4 +26,6 @@ spec:
               value: {{ .value | quote }}
             {{- end }}
             {{- end }}
+            - name: SENTRY_RELEASE
+              value: "{{ .Values.env.SENTRY_RELEASE }}"
       
