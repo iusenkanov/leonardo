@@ -20,6 +20,8 @@ spec:
           ports:
             - containerPort: 80
           env:
+            - name: ARGOCD_APP_REVISION
+              value: "{{ .Values.revision }}"
             {{- if .Values.env }}
             {{- range .Values.env }}
             - name: {{ .name }}
