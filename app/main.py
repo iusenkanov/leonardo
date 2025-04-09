@@ -10,6 +10,10 @@ sentry_sdk.init(
     traces_sample_rate=1.0
 )
 
+sentry_sdk.set_release("manual-test-release")
+
+sentry_sdk.capture_exception(Exception("🔥 Test error with manual release"))
+
 app = FastAPI()
 app.add_middleware(SentryAsgiMiddleware)
 
