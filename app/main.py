@@ -6,11 +6,9 @@ from sentry_sdk.integrations.asgi import SentryAsgiMiddleware
 dsn = os.getenv("SENTRY_DSN")
 sentry_sdk.init(
     dsn=dsn,
-    release="myapp@1.0.0",
+    release="myapp@1.0.1",
     traces_sample_rate=1.0
 )
-
-sentry_sdk.capture_exception(Exception("🔥 Test error with manual release"))
 
 app = FastAPI()
 app.add_middleware(SentryAsgiMiddleware)
