@@ -15,8 +15,6 @@ spec:
     targetRevision: HEAD
     path: charts
     helm:
-      values: |
-        revision: '{{ .AppRevision }}'
       valueFiles:
         - values.yaml
   destination:
