@@ -6,7 +6,6 @@ from sentry_sdk.integrations.asgi import SentryAsgiMiddleware
 dsn = os.getenv("SENTRY_DSN")
 sentry_sdk.init(
     dsn=dsn,
-    release="test-release-manual",
     traces_sample_rate=1.0
 )
 
