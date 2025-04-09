@@ -15,9 +15,6 @@ spec:
     targetRevision: HEAD
     path: charts
     helm:
-      parameters:
-        - name: revision
-          value: $ARGOCD_APP_REVISION
       valueFiles:
         - values.yaml
   destination:

@@ -26,6 +26,4 @@ spec:
               value: {{ .value | quote }}
             {{- end }}
             {{- end }}
-            - name: SENTRY_RELEASE
-              value: "leonardo@{{ .Values.revision | quote }}"
       
