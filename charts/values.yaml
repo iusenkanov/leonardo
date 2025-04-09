@@ -4,7 +4,7 @@ env:
   - name: SENTRY_DSN
     value: "https://501a7f30735cc02fcefd7878630bf1f6@o4509091708928000.ingest.us.sentry.io/4509116861972480"
   - name: SENTRY_RELEASE
-    value: "myapp@{{ .Values.image.tag | default \"dev\" }}"
+    value: "myproject@{{ .Chart.AppVersion }}"
 
 image:
   repository: ghcr.io/iusenkanov/leonardo
