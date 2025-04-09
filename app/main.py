@@ -20,3 +20,9 @@ def read_root():
 def generate_error():
     division_by_zero = 1 / 0
     return {"message": "This won't be returned"}
+
+@app.get("/version")
+def version():
+    return {
+        "git_revision": os.getenv("ARGOCD_APP_REVISION", "unknown")
+    }
