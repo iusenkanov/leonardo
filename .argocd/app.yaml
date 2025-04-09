@@ -17,7 +17,7 @@ spec:
     helm:
       parameters:
         - name: revision
-          value: $ARGOCD_APP_REVISION
+          value: '{{ .Revision }}'
       valueFiles:
         - values.yaml
   destination:
