@@ -16,11 +16,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Update SENTRY_RELEASE with Git SHA
-        run: |
-          sed -i "s|SENTRY_RELEASE.*|SENTRY_RELEASE\", \"value\": \"myapp@${{ github.sha }}\"|g" charts/values.yaml
-      
-
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v3
         with:
