@@ -6,7 +6,7 @@ env:
 
 image:
   repository: ghcr.io/iusenkanov/leonardo
-  tag: b41fd2c
+  tag: latest
   pullPolicy: Always
 
 service:
