@@ -1,6 +1,7 @@
 import os
 import sentry_sdk
 from fastapi import FastAPI
+from sentry_sdk.integrations.asgi import SentryAsgiMiddleware
 
 dsn = os.getenv("SENTRY_DSN")
 sentry_sdk.init(
@@ -9,6 +10,7 @@ sentry_sdk.init(
 )
 
 app = FastAPI()
+app.add_middleware(SentryAsgiMiddleware)
 
 @app.get("/")
 def read_root():
