@@ -22,10 +22,4 @@ spec:
           env:
             - name: ARGOCD_APP_REVISION
               value: "{{ .Values.revision }}"
-            {{- if .Values.env }}
-            {{- range .Values.env }}
-            - name: {{ .name }}
-              value: {{ .value | quote }}
-            {{- end }}
-            {{- end }}
       
