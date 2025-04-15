@@ -21,4 +21,4 @@ spec:
             - containerPort: 80
           env:
             - name: ARGOCD_APP_REVISION
-              value: {{ .Values.image.tag }}
+              value: ${{ .Values.revision }}
