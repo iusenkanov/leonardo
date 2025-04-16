@@ -18,11 +18,5 @@ def read_root():
 
 @app.get("/error")
 def generate_error():
-    try:
-        1 / 0
-    except ZeroDivisionError as e:
-        sentry_sdk.capture_exception(e)  # Still send to Sentry
-        return JSONResponse(
-            status_code=500,
-            content={"detail": "Internal error. We've been notified."}
-        )
+    division_by_zero = 1 / 0
+    return {"message": "This won't be returned"}
