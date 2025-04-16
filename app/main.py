@@ -14,7 +14,6 @@ sentry_sdk.init(
 )
 
 app = FastAPI()
-app.add_middleware(SentryAsgiMiddleware)
 
 @app.get("/")
 def read_root():
