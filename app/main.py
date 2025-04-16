@@ -4,13 +4,14 @@ from fastapi import FastAPI
 from sentry_sdk.integrations.asgi import SentryAsgiMiddleware
 
 dsn = os.getenv("SENTRY_DSN")
+revision = os.getenv("ARGOCD_APP_REVISION", "dev")
 sentry_sdk.init(
     dsn="https://501a7f30735cc02fcefd7878630bf1f6@o4509091708928000.ingest.us.sentry.io/4509116861972480",
     max_breadcrumbs=50,
     debug=True,
     send_default_pii=True,
     traces_sample_rate=1.0,
-    release=f"myapp@{os.getenv('ARGOCD_APP_REVISION')}"
+    release=f"leonardo@{revision}"
 )
 
 app = FastAPI()
