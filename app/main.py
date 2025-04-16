@@ -7,6 +7,7 @@ dsn = os.getenv("SENTRY_DSN")
 sentry_sdk.init(
     dsn=dsn,
     traces_sample_rate=1.0
+    release="myapp@1.0.5"
 )
 
 app = FastAPI()
