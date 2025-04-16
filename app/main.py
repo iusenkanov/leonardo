@@ -5,7 +5,7 @@ from sentry_sdk.integrations.asgi import SentryAsgiMiddleware
 
 dsn = os.getenv("SENTRY_DSN")
 sentry_sdk.init(
-    dsn=dsn,
+    dsn="https://501a7f30735cc02fcefd7878630bf1f6@o4509091708928000.ingest.us.sentry.io/4509116861972480",
     max_breadcrumbs=50,
     debug=True,
     send_default_pii=True,
