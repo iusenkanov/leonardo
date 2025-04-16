@@ -3,7 +3,7 @@ import sentry_sdk
 from fastapi import FastAPI
 from sentry_sdk.integrations.asgi import SentryAsgiMiddleware
 
-dsn = os.getenv("SENTRY_DSN")
+#dsn = os.getenv("SENTRY_DSN")
 sentry_sdk.init(
     dsn="https://501a7f30735cc02fcefd7878630bf1f6@o4509091708928000.ingest.us.sentry.io/4509116861972480",
     max_breadcrumbs=50,
@@ -18,7 +18,7 @@ sentry_sdk.init(
     # environment variable, or infer a git commit
     # SHA as release, however you may want to set
     # something more human-readable.
-    # release="myapp@1.0.0",
+    release="myapp@1.0.5",
 )
 
 app = FastAPI()
