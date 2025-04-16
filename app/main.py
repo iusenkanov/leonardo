@@ -10,7 +10,7 @@ sentry_sdk.init(
     debug=True,
     send_default_pii=True,
     traces_sample_rate=1.0,
-    release="myapp@1.0.5"
+    release=f"myapp@{os.getenv('ARGOCD_APP_REVISION')}"
 )
 
 app = FastAPI()
