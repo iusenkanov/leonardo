@@ -19,6 +19,3 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 80
-          env:
-            - name: ARGOCD_APP_REVISION
-              value: {{ .Values.revision }}
