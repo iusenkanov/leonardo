@@ -24,4 +24,4 @@ spec:
             - name: SENTRY_RELEASE
               value: "{{ .Values.sentryRelease }}"
             - name: SENTRY_DSN
-              value: https://501a7f30735cc02fcefd7878630bf1f6@o4509091708928000.ingest.us.sentry.io/4509116861972480
+              value: "{{ .Values.sentryDsn }}"
