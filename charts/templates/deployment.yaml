@@ -20,4 +20,4 @@ spec:
           ports:
             - containerPort: 80
           env:
-            SENTRY_RELEASE: ${{ github.sha }}
+            SENTRY_RELEASE: "{{ .Values.sentryRelease }}"
