@@ -19,5 +19,4 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: 80
-          env:
-            SENTRY_RELEASE: "{{ .Values.sentryRelease }}"
+
