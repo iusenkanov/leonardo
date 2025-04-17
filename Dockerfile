@@ -4,7 +4,8 @@ WORKDIR /app
 
 RUN pip install --no-cache-dir sentry-sdk uvicorn fastapi
 
-COPY .git /app/.git
+ARG SENTRY_RELEASE=dev
+ENV SENTRY_RELEASE=$SENTRY_RELEASE
 
 COPY app/ .
 
