@@ -40,7 +40,7 @@ jobs:
         with:
           environment: production
         env:
-          SENTRY_AUTH_TOKEN: ${{ secrets.v }}
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           SENTRY_ORG: bckg
           SENTRY_PROJECT: python
           SENTRY_RELEASE: ${{ github.sha }}
