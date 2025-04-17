@@ -8,6 +8,10 @@ dsn = os.getenv("SENTRY_DSN")
 
 release = os.getenv("SENTRY_RELEASE", "dev")
 
+print("=== ENV SENTRY_RELEASE ===")
+print(os.environ.get("SENTRY_RELEASE"))
+print("==========================")
+
 # Initialize Sentry
 sentry_sdk.init(
     dsn=dsn,  # Use env var for security and flexibility
