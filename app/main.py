@@ -1,7 +1,6 @@
 import os
 import sentry_sdk
 from fastapi import FastAPI
-from sentry_sdk.integrations.asgi import SentryAsgiMiddleware
 
 dsn = os.getenv("SENTRY_DSN")
 revision = os.getenv("ARGOCD_APP_REVISION", "dev")
@@ -11,7 +10,7 @@ sentry_sdk.init(
     debug=True,
     send_default_pii=True,
     traces_sample_rate=1.0,
-    release=f"leonardo@{revision}"
+    release=os.environ.get("SENTRY_RELEASE")
 )
 
 app = FastAPI()

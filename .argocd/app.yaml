@@ -15,10 +15,11 @@ spec:
     targetRevision: HEAD
     path: charts
     helm:
-      values: |
-        revision: "{{ .Revision }}"
       valueFiles:
         - values.yaml
+      parameters:
+        - name: revision
+          value: "{{ .Revision }}"
   destination:
     server: https://kubernetes.default.svc
     namespace: default

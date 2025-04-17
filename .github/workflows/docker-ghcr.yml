@@ -34,3 +34,13 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository_owner }}/leonardo:${{ env.IMAGE_TAG }}
             ghcr.io/${{ github.repository_owner }}/leonardo:latest
+
+      - name: Notify Sentry of Release
+        uses: getsentry/action-release@v1
+        with:
+          environment: production
+        env:
+          SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+          SENTRY_ORG: bckg
+          SENTRY_PROJECT: python
+          SENTRY_RELEASE: ${{ github.sha }}

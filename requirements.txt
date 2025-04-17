@@ -1,3 +1,0 @@
-fastapi
-uvicorn
-sentry-sdk

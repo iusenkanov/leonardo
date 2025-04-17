@@ -1,6 +1,10 @@
 replicaCount: 1
 revision: ""
 
+env:
+  - name: SENTRY_DSN
+    value: "https://501a7f30735cc02fcefd7878630bf1f6@o4509091708928000.ingest.us.sentry.io/4509116861972480"
+
 image:
   repository: ghcr.io/iusenkanov/leonardo
   tag: latest
