@@ -21,7 +21,7 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"message": "Hello from Kubernetes on AWS!"}
+    return {"message": "Hello from Kubernetes on AWS!", "param1":dsn, "param2": release}
 
 @app.get("/error")
 def generate_error():
