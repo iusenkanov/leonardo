@@ -1,4 +1,5 @@
 import os
+import subprocess
 import sentry_sdk
 from fastapi import FastAPI
 
@@ -7,7 +8,7 @@ dsn = os.getenv("SENTRY_DSN")
 def get_git_sha():
     try:
         # Получает текущий SHA коммита
-        sha = subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode('utf-8').strip()
+        sha = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).decode('utf-8').strip()
         return sha
     except Exception as e:
         print(f"Ошибка при получении git SHA: {e}")
