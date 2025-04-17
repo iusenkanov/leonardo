@@ -5,6 +5,7 @@ from fastapi import FastAPI
 
 # Get Sentry DSN and release version from environment
 dsn = os.getenv("SENTRY_DSN")
+
 def get_git_sha():
     try:
         # Получает текущий SHA коммита
@@ -14,7 +15,7 @@ def get_git_sha():
         print(f"Ошибка при получении git SHA: {e}")
         return "dev"
 
-release = os.getenv("SENTRY_RELEASE", get_git_sha())
+release = get_git_sha()
 
 # Initialize Sentry
 sentry_sdk.init(
