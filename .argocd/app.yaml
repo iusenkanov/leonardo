@@ -17,7 +17,7 @@ spec:
     helm:
       parameters:
         - name: sentryRelease
-          value: {{ARGOCD_APP_REVISION_SHORT}}
+          value: sdfsdf
       valueFiles:
         - values.yaml
   destination:
