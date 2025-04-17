@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v3
@@ -34,6 +36,7 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository_owner }}/leonardo:${{ env.IMAGE_TAG }}
             ghcr.io/${{ github.repository_owner }}/leonardo:latest
+
       - name: Notify Sentry of Release
         uses: getsentry/action-release@v1
         with:
