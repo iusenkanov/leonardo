@@ -43,4 +43,4 @@ jobs:
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           SENTRY_ORG: bckg
           SENTRY_PROJECT: autopilot
-          SENTRY_RELEASE: ${{ github.sha }}
+          
