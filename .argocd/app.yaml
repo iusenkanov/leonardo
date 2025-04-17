@@ -17,6 +17,8 @@ spec:
     helm:
       valueFiles:
         - values.yaml
+      values: |
+        sentryRelease: "{{ .Revision }}"
   destination:
     server: https://kubernetes.default.svc
     namespace: default
