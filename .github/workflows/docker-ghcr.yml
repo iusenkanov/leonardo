@@ -28,6 +28,7 @@ jobs:
       - name: Set IMAGE_TAG
         run: echo "IMAGE_TAG=${GITHUB_SHA}" >> $GITHUB_ENV
         
+        
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
@@ -46,8 +47,3 @@ jobs:
           SENTRY_ORG: bckg
           SENTRY_PROJECT: python
           SENTRY_RELEASE: ${{ github.sha }}
-      
-      - name: Deploy with Helm
-        run: |
-          helm upgrade --install leonardo ./charts/leonardo \
-            --set sentryRelease=$(echo "${{ github.sha }}" | cut -c1-7)

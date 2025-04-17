@@ -15,6 +15,9 @@ spec:
     targetRevision: HEAD
     path: charts
     helm:
+      parameters:
+        - name: sentryRelease
+          value: "{{ .Values.ARGOCD_APP_REVISION_SHORT }}"
       valueFiles:
         - values.yaml
   destination:
