@@ -1,5 +1,4 @@
 replicaCount: 1
-sentryRelease: "dev"
 
 image:
   repository: ghcr.io/iusenkanov/leonardo
