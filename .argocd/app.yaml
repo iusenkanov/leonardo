@@ -7,7 +7,7 @@ metadata:
     argocd-image-updater.argoproj.io/image-list: ghcr.io/iusenkanov/leonardo
     argocd-image-updater.argoproj.io/leonardo.update-strategy: latest
     argocd-image-updater.argoproj.io/leonardo.helm-image-name: image
-    argocd-image-updater.argoproj.io/leonardo.helm-tag-name: sentryRelease
+    argocd-image-updater.argoproj.io/leonardo.helm-tag-name: tag
 spec:
   project: default
   source:
@@ -17,8 +17,6 @@ spec:
     helm:
       valueFiles:
         - values.yaml
-      values: |
-        sentryRelease: "{{ .Revision }}"
   destination:
     server: https://kubernetes.default.svc
     namespace: default
