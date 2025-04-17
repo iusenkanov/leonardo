@@ -8,7 +8,7 @@ release = os.getenv("SENTRY_RELEASE", "dev")  # fallback to 'dev' if not set
 
 # Initialize Sentry
 sentry_sdk.init(
-    dsn=dsn,  # Use env var for security and flexibility
+    dsn="https://501a7f30735cc02fcefd7878630bf1f6@o4509091708928000.ingest.us.sentry.io/4509116861972480",
     release=release,  # Set release version for better tracking
     max_breadcrumbs=50,
     debug=True,
